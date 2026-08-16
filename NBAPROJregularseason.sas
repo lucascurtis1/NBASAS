@@ -25,7 +25,7 @@ data nbaproj.Regular_Seasonstats22unfinish;
 run;
 
 data nbaproj.Regular_Seasonstats22;
-    set nbaproj.Regular_Seasonstats22;
+    set nbaproj.Regular_Seasonstats22unfinish;
     if Tm = '3TM' or Tm = '2TM' or Tm = '4TM' then delete;
 run;
 
