@@ -32,8 +32,8 @@ reads in the SAS file; the encoding part helps to read in the team names cleanly
 """
 def Centers(dataset_i):
     """
-    Takes a sas dataset and ultimately returns a dataframe that includes the point value I came up with,
-    +0 for low efficiency and volume, +1 for high efficiency or volume, and +2 for high efficiency and volume.
+    Takes a sas dataset and ultimately returns a dataframe that includes the point value as follows,
+    +0 for low efficiency and volume, +1 for high efficiency or volume (not both), and +2 for high efficiency and volume.
     
     Unique to Centers
     """
@@ -185,7 +185,9 @@ for key, serieslist in Series_of_PV_dict.items():
         }
     """
     Point_Value_Dictionary[key] = pd.concat(objs=serieslist, axis=1).fillna(0).sum(axis=1)
-        
+
+
+
 
 
     
