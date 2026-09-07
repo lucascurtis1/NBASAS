@@ -197,3 +197,12 @@ for key, serieslist in Series_of_PV_dict.items():
 
 
 
+Point_Value_df = pd.DataFrame(Point_Value_Dictionary)
+"""
+Takes the Point_Value_Dictionary above and creates a dataframe that sorts years by column,
+and team by row (index). Shows point value for each team, each year!
+I will now export this to a csv file.
+"""
+
+Point_Value_df.to_csv('Point_Values_By_Season.csv')
+
