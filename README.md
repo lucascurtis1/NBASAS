@@ -1,12 +1,12 @@
 # NBA Statistical Analysis and Data Visualization in SAS and Python (in progress)
 
 ## SAS PORTION
-- Aggregated indivual player stats into team stats
-- Compared teams position-by-position with Data Visualization
+- Aggregated individual player 3PT Shooting stats into team stats, filtered by position
+- Developed comprehensive scatter plot that compares teams position-by-position
 
 ## Python PORTION
-- Manipulated dataframes and dictionaries in order to cleanly access SAS data
-- Assigned custom point values as a metric for 3pt success
+- Used Pandas dataframes and dictionaries in order to cleanly access sas7bdat data from the SAS Portion
+- Assigned custom point values as a metric for 3pt success, factoring in positional value. +1 for above league avg %, and +1 for above 1.5, 3.5 or 4.5 3PM P/G based on position.
 
 ## SKILLS USED, SAS
 - PROC SUMMARY
