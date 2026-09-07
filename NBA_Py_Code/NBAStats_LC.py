@@ -37,7 +37,7 @@ def Centers(dataset_i):
     
     Unique to Centers
     """
-    data = pd.read_sas(dataset_i, encoding='utf-8')
+    data_C = pd.read_sas(dataset_i, encoding='utf-8')
     if '22' in dataset_i:
         LA_Pct = .354
     elif '23' in dataset_i:
@@ -46,12 +46,12 @@ def Centers(dataset_i):
         LA_Pct = .366
     elif '25' in dataset_i:
         LA_Pct = .360
-    data2 = data.assign(
-        Over_LA_Pct = data['Percentage'] > LA_Pct,
-        Over_3PM_Std = data['Made_Per_Game'] > 1.5
+    data2_C = data_C.assign(
+        Over_LA_Pct = data_C['Percentage'] > LA_Pct,
+        Over_3PM_Std_C = data_C['Made_Per_Game'] > 1.5
         )
-    With_Point_Values = data2.assign(
-        Point_Value = data2['Over_LA_Pct'].astype(int) + data2['Over_3PM_Std'].astype(int)
+    With_Point_Values = data2_C.assign(
+        Point_Value = data2_C['Over_LA_Pct'].astype(int) + data2_C['Over_3PM_Std_C'].astype(int)
         )   
     return With_Point_Values
 
@@ -73,10 +73,10 @@ def PgSgSf(dataset_i):
         LA_Pct = .360
     data2 = data.assign(
         Over_LA_Pct = data['Percentage'] > LA_Pct,
-        Over_3PM_Std = data['Made_Per_Game'] > 4.5
+        Over_3PM_Std_PgSgSf = data['Made_Per_Game'] > 4.5
         )
     With_Point_Values = data2.assign(
-        Point_Value = data2['Over_LA_Pct'].astype(int) + data2['Over_3PM_Std'].astype(int)
+        Point_Value = data2['Over_LA_Pct'].astype(int) + data2['Over_3PM_Std_PgSgSf'].astype(int)
         )
     return With_Point_Values
 
@@ -98,13 +98,12 @@ def PowerForwards(dataset_i):
         LA_Pct = .360
     data2 = data.assign(
         Over_LA_Pct = data['Percentage'] > LA_Pct,
-        Over_3PM_Std = data['Made_Per_Game'] > 3.5
+        Over_3PM_Std_pf = data['Made_Per_Game'] > 3.5
         )
     With_Point_Values = data2.assign(
-        Point_Value = data2['Over_LA_Pct'].astype(int) + data2['Over_3PM_Std'].astype(int)
+        Point_Value = data2['Over_LA_Pct'].astype(int) + data2['Over_3PM_Std_pf'].astype(int)
         )
     return With_Point_Values
-
 
 
 datasets_by_year = defaultdict(list)
@@ -133,16 +132,17 @@ for key , value in datasets_by_year.items():
     creates a dictionary, where the key is year and the values are a list of dataframes, one for each position
     """
     for dataset_i in value:
-        if 'pg' or 'sg' or 'sf' in dataset_i:
+        if 'pg' in dataset_i or 'sg' in dataset_i or 'sf' in dataset_i:
             PV = PgSgSf(dataset_i)
             dataframes_by_year[key].append(PV)
         elif 'pf' in dataset_i:
             PV = PowerForwards(dataset_i)
             dataframes_by_year[key].append(PV)
-        else:
+        elif 'center' in dataset_i:
             PV = Centers(dataset_i)
             dataframes_by_year[key].append(PV)
 
+        
 Series_of_PV_dict = defaultdict(list)
 
 for key, value in dataframes_by_year.items():
@@ -188,7 +188,3 @@ for key, serieslist in Series_of_PV_dict.items():
 
 
 
-
-
-    
-    
