@@ -9,7 +9,7 @@
 - Assigned custom point values as a metric for 3pt success
 - Done in Spyder^
 - Took point value dataframe from first python program, and did a pearson correlation coefficient, along with a scatter plot, testing the association between 3pt success and playoff wins.
-
+- Done in Jupyter Notebook^
 ## SKILLS USED, SAS
 - PROC SUMMARY
 - PROC SGPLOT
@@ -27,7 +27,9 @@
 - NBA_Py_Code -> Files of code done in Python
 - NBA_SAS_Code -> Files of code done in SAS
 - NBA_Season_Stats -> csv files of both regular season and playoff player stats
-- NBA_Team_Playoff_Stats -> Contains Advanced Playoff Statistics, not yet used
+- NBA_Team_Playoff_Stats -> Contains Advanced Playoff Statistics and Playoff wins
+- Notebooks -> contains jupyter notebook file in which I carried out analysis
+- Positional_Data -> Contains csv of positional point value data, gathered from python scripts
 - SAS_Datasets_NBA3PT -> Contains sas7bdat files for moving playoff statistic data to python after sas portion is done.
 - SAS_Datasets_NBA3PT_RegularSeason -> Same as above, but for regular season.
 - 3pt_Playoff_Plot_21_22.pdf -> an example plot of what the sas portion delivers.
