@@ -20,9 +20,11 @@
 - Dictionaries (including the use of defaultdict from collections)
 
 ## FILES
-- NBA_Season_Stats -> Folder containing nba data (acquired from basketball reference)
-- SAS_Datasets_NBA3PT -> downloaded sas7bdat datasets
-- NBAPROJplayoffs -> SAS code for playoffs
-- NBAPROJregular -> SAS code for regular season
-- NBAStats.py -> Python code
-- 3pt_Playoff_Plot_21_22.pdf -> Sample of what SAS visuals look like
+- NBA_Py_Code -> Files of code done in Python
+- NBA_SAS_Code -> Files of code done in SAS
+- NBA_Season_Stats -> csv files of both regular season and playoff player stats
+- NBA_Team_Playoff_Stats -> Contains Advanced Playoff Statistics, not yet used
+- SAS_Datasets_NBA3PT -> Contains sas7bdat files for moving playoff statistic data to python after sas portion is done.
+- SAS_Datasets_NBA3PT_RegularSeason -> Same as above, but for regular season.
+- 3pt_Playoff_Plot_21_22.pdf -> an example plot of what the sas portion delivers.
+- README.md -> well, this.
