@@ -16,6 +16,14 @@ note to self:
 """
 
 
+"""
+IMPORTANT: When analyzing the series with positional point values:
+    0 - C
+    1 - PF
+    2 - PG
+    3 - SF
+    4 - SG
+"""
 
 os.chdir(r"C:\Users\skywa\OneDrive\Documents\FunCode\NBA3PT\SAS_Datasets_NBA3PT")
 
